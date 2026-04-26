@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #01696F;
+    --color-secondary: #F3F0EC;
+    --color-accent: #D19900;
+    --color-success: #437A22;
+    --color-warning: #964219;
+    --color-danger: #A12C7B;
+    --color-surface: #F9F8F5;
+    --color-text: #28251D;
+    --color-muted: #7A7974;
+    --color-border: #D4D1CA;
+  }
+
+  .dark {
+    --color-primary: #339FA7;
+    --color-background: #0a0a0a;
+    --color-surface: #18181b;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+@layer utilities {
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+}
