@@ -26,8 +26,10 @@
 
 #### Build Command
 ```bash
-npm ci && npm run build
+npm install && npm run build
 ```
+
+> **Nota:** Usamos `npm install` em vez de `npm ci` porque o ambiente do Laravel Cloud pode precisar instalar dependências nativas de plataforma (ex: `@emnapi/*`) que não estão no lock file gerado localmente.
 
 #### Deploy Command (Release Command)
 ```bash

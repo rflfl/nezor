@@ -56,8 +56,10 @@ SANCTUM_STATEFUL_DOMAINS=nezor.laravel.cloud
 ### 2. Build Command
 
 ```bash
-npm ci && npm run build
+npm install && npm run build
 ```
+
+> **Nota:** Usamos `npm install` em vez de `npm ci` porque o Laravel Cloud pode precisar instalar dependências de plataforma específicas (como `@emnapi/*`) que não estão no lock file gerado localmente.
 
 ### 3. Deploy Command
 
