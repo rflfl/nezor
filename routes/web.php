@@ -51,4 +51,8 @@ Route::middleware([
     })->name('reports');
 
     Route::get('/suporte', \App\Http\Controllers\SupportController::class)->name('support');
+
+    Route::get('/settings', function () {
+        return Inertia::render('Settings');
+    })->name('settings');
 });

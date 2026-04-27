@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS `personal_access_tokens`;
+DROP TABLE IF EXISTS `password_reset_tokens`;
+DROP TABLE IF EXISTS `sessions`;
+DROP TABLE IF EXISTS `failed_jobs`;
+DROP TABLE IF EXISTS `jobs`;
+DROP TABLE IF EXISTS `cache_locks`;
+DROP TABLE IF EXISTS `cache`;
+DROP TABLE IF EXISTS `daily_service_entries`;
+DROP TABLE IF EXISTS `appointments`;
+DROP TABLE IF EXISTS `cash_registers`;
+DROP TABLE IF EXISTS `services`;
+DROP TABLE IF EXISTS `customers`;
+DROP TABLE IF EXISTS `professionals`;
+DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `migrations`;
