@@ -51,7 +51,7 @@ APP_LOCALE=pt_BR
 APP_FALLBACK_LOCALE=pt_BR
 
 DB_CONNECTION=mysql
-DB_HOST=[IP_OU_HOSTNAME_DO_MYSQL_HOSTINGER]
+DB_HOST=srv1199.hstgr.io
 DB_PORT=3306
 DB_DATABASE=u186341430_nezor_mvp_db
 DB_USERNAME=u186341430_nezor
@@ -82,7 +82,7 @@ Como estamos usando MySQL da Hostinger (não o banco gerenciado do Laravel Cloud
 1. Vá em **Database** ou **Services**
 2. Selecione "External Database"
 3. Preencha com os dados da Hostinger:
-   - Host: `srv1234.hstgr.io` (ou o que a Hostinger forneceu)
+   - Host: `srv1199.hstgr.io`
    - Port: `3306`
    - Database: `u186341430_nezor_mvp_db`
    - Username: `u186341430_nezor`
