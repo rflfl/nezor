@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { Head, useForm, router } from '@inertiajs/vue3';
+import { ref, computed, watch } from 'vue';
+import { Head, useForm, router, usePage } from '@inertiajs/vue3';
 import { PhUser, PhLock, PhDeviceMobile, PhTrash, PhCheck, PhWarning, PhSignOut } from '@phosphor-icons/vue';
 import AppLayout from '@/Layouts/AppLayout.vue';
 
@@ -14,6 +14,19 @@ const props = defineProps<{
     };
   };
 }>();
+
+const page = usePage();
+const jetstreamFlash = computed(() => page.props.jetstream?.flash || {});
+const showSuccess = ref(false);
+const successMessage = ref('');
+
+watch(() => jetstreamFlash.value, (flash) => {
+  if (flash?.banner) {
+    successMessage.value = flash.banner;
+    showSuccess.value = true;
+    setTimeout(() => showSuccess.value = false, 4000);
+  }
+}, { immediate: true, deep: true });
 
 // Profile form
 const profileForm = useForm({
@@ -96,6 +109,15 @@ const deleteAccount = () => {
           <h1 class="text-2xl font-bold text-text dark:text-white">Configurações</h1>
           <p class="text-sm text-muted">Gerencie sua conta e preferências</p>
         </div>
+      </div>
+
+      <!-- Success Message -->
+      <div
+        v-if="showSuccess"
+        class="bg-success/10 border border-success/30 rounded-xl p-4 flex items-center gap-3 animate-fade-in"
+      >
+        <PhCheck class="w-5 h-5 text-success flex-shrink-0" />
+        <p class="text-sm text-success font-medium">{{ successMessage || 'Operação realizada com sucesso!' }}</p>
       </div>
 
       <!-- Profile Info -->
